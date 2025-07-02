@@ -1,0 +1,193 @@
+/* styles.css */
+
+/* Сброс и базовые установки */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #f9f9f9;
+  color: #111;
+  overflow: hidden;
+}
+
+/* Заголовок */
+h1 {
+  margin: 20px;
+  color: #0055cc;
+}
+
+/* Дисклеймер */
+#disclaimer {
+  margin: 0 20px 15px;
+  padding: 12px 16px;
+  background: #fff4f4;
+  border: 1px solid #ffa0a0;
+  border-radius: 8px;
+  color: #900;
+}
+#disclaimer a {
+  color: #b30d0d;
+  text-decoration: underline;
+}
+
+/* Поисковая строка */
+.search-bar {
+  display: flex;
+  margin: 0 20px 15px;
+  gap: 8px;
+}
+#address-input {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+#address-input:focus {
+  border-color: #0055cc;
+}
+#search-btn {
+  padding: 8px 16px;
+  font-size: 1rem;
+  background: #0055cc;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+#search-btn:hover {
+  background: #0042a8;
+}
+
+/* Основная область: карта и боковая панель по 50% ширины */
+.main-content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Карта слева */
+#map {
+  flex: 1;
+  margin: 0 10px 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+/* Боковая панель справа */
+#sidebar {
+  flex: 1;
+  margin: 0 20px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Индикатор загрузки */
+#loading-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.05);
+  margin-bottom: 10px;
+  flex: 0 0 auto;
+}
+.loader {
+  border: 4px solid #eee;
+  border-top: 4px solid #007aff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Окно результатов */
+#result {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.05);
+}
+
+/* Каждый результат */
+.search-result-item {
+  margin-bottom: 1.2em;
+}
+
+/* Адрес */
+.search-result-address {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #222;
+}
+
+/* Пометка об отсутствии номера дома */
+.address-note {
+  margin-left: 0.5em;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #a00;
+}
+
+/* Дата */
+.search-result-date {
+  margin: 0.3em 0 0 0;
+  font-size: 0.95rem;
+  color: #b30d0d;
+}
+
+/* Прячем атрибуцию Leaflet, если она появляется */
+.leaflet-control-attribution {
+  display: none !important;
+}
+
+/* Отображение заголовка и кнопки */
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;  /* прижимаем всё к левому краю */
+  margin: 20px;
+  gap: 30px;                    /* промежуток между заголовком и кнопкой */
+}
+
+/* Кнопка «Что это такое?» */
+.info-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #0055cc;   /* тот же цвет, что и заголовок */
+  border-radius: 6px;          /* закруглённые края */
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.info-btn:hover,
+.info-btn:focus {
+  background-color: #0042a8;   /* чуть более тёмный при наведении */
+}
+/* Подпись над картой */
+.map-caption {
+  margin: 0 20px 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #0056b3;
+}
